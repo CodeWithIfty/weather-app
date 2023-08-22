@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 <!-- Tailwind cdn -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome cdn -->
+  <script src="https://kit.fontawesome.com/c681ce1328.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -13,37 +17,41 @@
     <!-- component -->
 <div class=" flex items-center justify-center  ">
         <div class="flex flex-col bg-white rounded p-4 w-full max-w-sm shadow-xl">
-						<div class="font-bold text-xl">Sydney</div>
-						<div class="text-sm text-gray-500">Thursday 10 May 2020</div>
+			<div class="flex ">
+				<input id="city-name-input" type="text" placeholder="Enter City Name" class="input input-bordered  w-full max-w-xs mb-6" />
+			<button id="search-btn" type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</div>
+						<div id="city-name" class="font-bold text-xl">Sydney</div>
+						<div id="date" class="text-sm text-gray-500">Thursday 10 May 2020</div>
 						<div class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
                 <svg class="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
 						</div>
 						<div class="flex flex-row items-center justify-center mt-6">
-							<div class="font-medium text-6xl">24°</div>
+							<div id="temp" class="font-medium text-6xl">24</div>
 							<div class="flex flex-col items-center ml-6">
-								<div>Cloudy</div>
+								<div id="weather-status">Cloudy</div>
 								<div class="mt-1">
-									<span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
-									<span class="text-sm font-light text-gray-500">28°C</span>
+									<span class="text-sm"><i class="fa-solid fa-arrow-up-long"></i></span>
+									<span id="temp-max" class="text-sm font-light text-gray-500">28°C</span>
 								</div>
 								<div>
-									<span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
-									<span class="text-sm font-light text-gray-500">20°C</span>
+									<span class="text-sm"><i class="fa-solid fa-arrow-down-long"></i></span>
+									<span id="temp-min" class="text-sm font-light text-gray-500">20°C</span>
 								</div>
 							</div>
 						</div>
 						<div class="flex flex-row justify-between mt-6">
 							<div class="flex flex-col items-center">
 								<div class="font-medium text-sm">Wind</div>
-								<div class="text-sm text-gray-500">9k/h</div>
+								<div id="wind" class="text-sm text-gray-500">9k/h</div>
 							</div>
 							<div class="flex flex-col items-center">
 								<div class="font-medium text-sm">Humidity</div>
-								<div class="text-sm text-gray-500">68%</div>
+								<div id="humidity" class="text-sm text-gray-500">68%</div>
 							</div>
 							<div class="flex flex-col items-center">
 								<div class="font-medium text-sm">Visibility</div>
-								<div class="text-sm text-gray-500">10km</div>
+								<div id="visibility" class="text-sm text-gray-500">10km</div>
 							</div>
 						</div>
 	</div>
